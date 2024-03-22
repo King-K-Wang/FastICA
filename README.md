@@ -1,0 +1,2 @@
+# FastICA
+FastICA algorithm
