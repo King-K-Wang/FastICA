@@ -90,13 +90,13 @@ int main(int argc, char *argv[]) {
                 }
             }
         }
-        if(max_number < ACCURATE && max_number > -ACCURATE) {
-            // printf("Jacobi uses cycles = %d\n", i);
-            break;
-        }
 
         /* 旋转角计算 */
         double theta = atan(2.0 * max_number / (eigenvalue[max_row][max_row] - eigenvalue[max_column][max_column])) / 2.0;
+        if (fabs(theta) < ACCURATE) {
+          printf("end theta = %20.5lf", theta);
+          break;
+        }
 
         /* Givens矩阵 */
         double givens[M][M];
